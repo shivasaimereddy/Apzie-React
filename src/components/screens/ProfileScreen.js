@@ -161,7 +161,7 @@ function ProfileScreen({ history }) {
                                     <td>{order.isDelivered ? (
                                         <i className='fas' style={{ color: 'green' }}>{order.deliveredAt.substring(0, 10)}</i>
                                     ) : (
-                                        <i className='fas fa-check' style={{ color: 'red' }}></i>
+                                        <i className='fas fa-times' style={{ color: 'red' }}></i>
                                     )}
                                     </td>
 
