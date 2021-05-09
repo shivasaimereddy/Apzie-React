@@ -119,11 +119,11 @@ function ProductListScreen({ history, match }) {
                                             <td>{product.category}</td>
                                             <td>{product.brand}</td>
                                             <td width="8%" onClick={togglePopup}>
-                                                <Image src={product.image} fluid rounded />
+                                                <Image src={product.image_url} fluid rounded />
                                                 {isOpen && <Popup
                                                     content={<>
                                                         <Image
-                                                            img src={product.image}
+                                                            img src={product.image_url}
                                                             alt="product image"
                                                             className='center'
                                                             fluid

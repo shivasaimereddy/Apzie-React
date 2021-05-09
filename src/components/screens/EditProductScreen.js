@@ -41,7 +41,7 @@ function EditProductScreen({ match, history }) {
             } else {
                 setName(product.name)
                 setPrice(product.price)
-                setImage(product.image)
+                setImage(product.image_url)
                 setBrand(product.brand)
                 setCategory(product.category)
                 setCountInStock(product.countInStock)
