@@ -35,7 +35,7 @@ export const listProducts = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const { data } = await axios.get(`/api/products${keyword}`);
+    const { data } = await axios.get(`https://apzie.azurewebsites.net/api/products${keyword}`);
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
@@ -56,7 +56,7 @@ export const carouselProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_CAROUSEL_REQUEST });
 
-    const { data } = await axios.get(`/api/products/carousel/`);
+    const { data } = await axios.get(`https://apzie.azurewebsites.net/api/products/carousel/`);
 
     dispatch({
       type: PRODUCT_CAROUSEL_SUCCESS,
@@ -77,7 +77,7 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(`https://apzie.azurewebsites.net/api/products/${id}`);
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
@@ -113,7 +113,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
     }
 
     const { data } = await axios.delete(
-      `/api/products/delete/${id}/`,
+      `https://apzie.azurewebsites.net/api/products/delete/${id}/`,
       config
     )
 
