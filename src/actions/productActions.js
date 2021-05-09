@@ -112,6 +112,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
       }
     }
 
+    // eslint-disable-next-line no-unused-vars
     const { data } = await axios.delete(
       `https://apzie.azurewebsites.net/api/products/delete/${id}/`,
       config

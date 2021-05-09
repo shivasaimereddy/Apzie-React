@@ -48,7 +48,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.post(
-            `https://apzie.azurewebsites.net/api/orders/add/`,
+            `/api/orders/add/`,
             order,
             config
         )
@@ -96,7 +96,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzie.azurewebsites.net/api/orders/${id}/`,
+            `/api/orders/${id}/`,
             config
         )
 
@@ -135,7 +135,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzie.azurewebsites.net/api/orders/myorders/`,
+            `/api/orders/myorders/`,
             config
         )
 
@@ -174,7 +174,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `https://apzie.azurewebsites.net/api/orders/${order._id}/deliver/`,
+            `/api/orders/${order._id}/deliver/`,
             {},
             config
         )
@@ -213,7 +213,7 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `https://apzie.azurewebsites.net/api/orders/${id}/pay/`,
+            `/api/orders/${id}/pay/`,
             paymentResult,
             config
         )
@@ -252,7 +252,7 @@ export const listOrders = () => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzie.azurewebsites.net/api/orders/`,
+            `/api/orders/`,
             config
         )
 
