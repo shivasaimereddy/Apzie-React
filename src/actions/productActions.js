@@ -151,7 +151,7 @@ export const createProduct = () => async (dispatch, getState) => {
     }
 
     const { data } = await axios.post(
-      `/api/products/create/`,
+      `https://apzie.azurewebsites.net/api/products/create/`,
       {},
       config
     )
@@ -191,7 +191,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     }
 
     const { data } = await axios.put(
-      `/api/products/update/${product._id}/`,
+      `https://apzie.azurewebsites.net/api/products/update/${product._id}/`,
       product,
       config
     )
@@ -234,7 +234,7 @@ export const productReview = (productId, review) => async (dispatch, getState) =
     }
 
     const { data } = await axios.post(
-      `/api/products/${productId}/reviews/`,
+      `https://apzie.azurewebsites.net/api/products/${productId}/reviews/`,
       review,
       config
     )
