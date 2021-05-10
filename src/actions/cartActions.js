@@ -8,7 +8,7 @@ import {
 } from "../constants/cartConstants";
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-  const { data } = await axios.get(`https://apzie.azurewebsites.net/api/products/${id}`);
+  const { data } = await axios.get(`https://apzieserver.azurewebsites.net/api/products/${id}`);
 
   dispatch({
     type: CART_ADD_ITEM,

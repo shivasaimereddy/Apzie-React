@@ -47,7 +47,7 @@ export const login = (email, password) => async (dispatch) => {
         }
 
         const { data } = await axios.post(
-            'https://apzie.azurewebsites.net/api/users/login/',
+            'https://apzieserver.azurewebsites.net/api/users/login/',
             { 'username': email, 'password': password },
             config
         )
@@ -92,7 +92,7 @@ export const register = (name, email, password) => async (dispatch) => {
         }
 
         const { data } = await axios.post(
-            'https://apzie.azurewebsites.net/api/users/register/',
+            'https://apzieserver.azurewebsites.net/api/users/register/',
             { 'name': name, 'email': email, 'password': password },
             config
         )
@@ -139,7 +139,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzie.azurewebsites.net/api/users/${id}/`,
+            `https://apzieserver.azurewebsites.net/api/users/${id}/`,
             config
         )
 
@@ -177,7 +177,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `https://apzie.azurewebsites.net/api/users/profile/update/`,
+            `https://apzieserver.azurewebsites.net/api/users/profile/update/`,
             user,
             config
         )
@@ -224,7 +224,7 @@ export const listUsers = () => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzie.azurewebsites.net/api/users/`,
+            `https://apzieserver.azurewebsites.net/api/users/`,
             config
         )
 
@@ -264,7 +264,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.delete(
-            `https://apzie.azurewebsites.net/api/users/delete/${id}/`,
+            `https://apzieserver.azurewebsites.net/api/users/delete/${id}/`,
             config
         )
 
@@ -305,7 +305,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `https://apzie.azurewebsites.net/api/users/update/${user._id}/`,
+            `https://apzieserver.azurewebsites.net/api/users/update/${user._id}/`,
             user,
             config
         )
