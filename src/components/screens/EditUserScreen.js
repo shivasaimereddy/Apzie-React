@@ -16,6 +16,7 @@ function EditUserScreen({ match, history }) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [isAdmin, setIsAdmin] = useState(false)
+    const [isActive, setIsActive] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -38,6 +39,7 @@ function EditUserScreen({ match, history }) {
                 setName(user.name)
                 setEmail(user.email)
                 setIsAdmin(user.isAdmin)
+                setIsActive(user.isActive)
             }
         }
 
@@ -45,7 +47,7 @@ function EditUserScreen({ match, history }) {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(updateUser({ _id: user._id, name, email, isAdmin }))
+        dispatch(updateUser({ _id: user._id, name, email, isAdmin, isActive }))
 
     }
     return (
@@ -92,6 +94,17 @@ function EditUserScreen({ match, history }) {
                                         label='Is Admin'
                                         checked={isAdmin}
                                         onChange={(e) => setIsAdmin(e.target.checked)}
+                                    >
+
+                                    </Form.Check>
+                                </FormGroup>
+
+                                <FormGroup controlId='isactive'>
+                                    <Form.Check
+                                        type='checkbox'
+                                        label='Is Active'
+                                        checked={isActive}
+                                        onChange={(e) => setIsActive(e.target.checked)}
                                     >
 
                                     </Form.Check>

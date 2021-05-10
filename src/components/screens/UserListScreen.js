@@ -48,7 +48,8 @@ function UserListScreen({ history }) {
                                     <th>NAME</th>
                                     <th>EMAIL</th>
                                     <th>ADMIN</th>
-                                    <th></th>
+                                    <th>ACTIVE</th>
+                                    <th>SETTINGS</th>
                                 </tr>
 
                             </thead>
@@ -64,6 +65,13 @@ function UserListScreen({ history }) {
                                                 <i className='fas fa-check' style={{ color: 'green' }}></i>
                                             )
                                             : (
+                                                <i className='fas fa-check' style={{ color: 'red' }}></i>
+                                            )}</td>
+                                        <td>{user.isActive
+                                            ? (
+                                                <i className='fas fa-check' style={{ color: 'green' }}></i>
+                                            ) :
+                                            (
                                                 <i className='fas fa-check' style={{ color: 'red' }}></i>
                                             )}</td>
                                         <td>
