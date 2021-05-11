@@ -14,7 +14,7 @@ import {
 import Rating from "../../components/Rating";
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
-import { createProduct, listProductDetails, productReview } from "../../actions/productActions";
+import { listProductDetails, productReview } from "../../actions/productActions";
 import { PRODUCT_REVIEW_RESET } from '../../constants/productConstants'
 
 function ProductScreen({ match, history }) {
