@@ -6,9 +6,11 @@ import {
   CART_SAVE_PAYMENT_METHOD,
 
 } from "../constants/cartConstants";
+import { proxy } from '../constants/server'
+
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-  const { data } = await axios.get(`https://apzieserver.azurewebsites.net/api/products/${id}`);
+  const { data } = await axios.get(`${proxy}/api/products/${id}`);
 
   dispatch({
     type: CART_ADD_ITEM,

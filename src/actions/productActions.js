@@ -31,11 +31,13 @@ import {
 
 } from "../constants/productConstants";
 
+import { proxy } from '../constants/server'
+
 export const listProducts = (keyword = '') => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const { data } = await axios.get(`https://apzieserver.azurewebsites.net/api/products${keyword}`);
+    const { data } = await axios.get(`${proxy}/api/products${keyword}`);
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
@@ -56,7 +58,7 @@ export const carouselProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_CAROUSEL_REQUEST });
 
-    const { data } = await axios.get(`https://apzieserver.azurewebsites.net/api/products/carousel/`);
+    const { data } = await axios.get(`${proxy}/api/products/carousel/`);
 
     dispatch({
       type: PRODUCT_CAROUSEL_SUCCESS,
@@ -77,7 +79,7 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`https://apzieserver.azurewebsites.net/api/products/${id}`);
+    const { data } = await axios.get(`${proxy}/api/products/${id}`);
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
@@ -114,7 +116,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
 
     // eslint-disable-next-line no-unused-vars
     const { data } = await axios.delete(
-      `https://apzieserver.azurewebsites.net/api/products/delete/${id}/`,
+      `${proxy}/api/products/delete/${id}/`,
       config
     )
 
@@ -152,7 +154,7 @@ export const createProduct = () => async (dispatch, getState) => {
     }
 
     const { data } = await axios.post(
-      `https://apzieserver.azurewebsites.net/api/products/create/`,
+      `${proxy}/api/products/create/`,
       {},
       config
     )
@@ -192,7 +194,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     }
 
     const { data } = await axios.put(
-      `https://apzieserver.azurewebsites.net/api/products/update/${product._id}/`,
+      `${proxy}/api/products/update/${product._id}/`,
       product,
       config
     )
@@ -235,7 +237,7 @@ export const productReview = (productId, review) => async (dispatch, getState) =
     }
 
     const { data } = await axios.post(
-      `https://apzieserver.azurewebsites.net/api/products/${productId}/reviews/`,
+      `${proxy}/api/products/${productId}/reviews/`,
       review,
       config
     )
