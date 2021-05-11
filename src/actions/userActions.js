@@ -33,6 +33,8 @@ import {
     USER_UPDATE_FAIL,
 
 } from "../constants/userConstants";
+import { proxy } from '../constants/server'
+
 
 export const login = (email, password) => async (dispatch) => {
     try {
@@ -47,7 +49,7 @@ export const login = (email, password) => async (dispatch) => {
         }
 
         const { data } = await axios.post(
-            'https://apzieserver.azurewebsites.net/api/users/login/',
+            `${proxy}/api/users/login/`,
             { 'username': email, 'password': password },
             config
         )
@@ -92,7 +94,7 @@ export const register = (name, email, password) => async (dispatch) => {
         }
 
         const { data } = await axios.post(
-            'https://apzieserver.azurewebsites.net/api/users/register/',
+            `${proxy}/api/users/register/`,
             { 'name': name, 'email': email, 'password': password },
             config
         )
@@ -139,7 +141,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzieserver.azurewebsites.net/api/users/${id}/`,
+            `${proxy}/api/users/${id}/`,
             config
         )
 
@@ -177,7 +179,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `https://apzieserver.azurewebsites.net/api/users/profile/update/`,
+            `${proxy}/api/users/profile/update/`,
             user,
             config
         )
@@ -224,7 +226,7 @@ export const listUsers = () => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzieserver.azurewebsites.net/api/users/`,
+            `${proxy}/api/users/`,
             config
         )
 
@@ -264,7 +266,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.delete(
-            `https://apzieserver.azurewebsites.net/api/users/delete/${id}/`,
+            `${proxy}/api/users/delete/${id}/`,
             config
         )
 
@@ -305,7 +307,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `https://apzieserver.azurewebsites.net/api/users/update/${user._id}/`,
+            `${proxy}/api/users/update/${user._id}/`,
             user,
             config
         )

@@ -26,6 +26,7 @@ import {
 } from '../constants/orderConstants'
 
 import { CART_CLEAR_ITEMS } from '../constants/cartConstants'
+import { proxy } from '../constants/server'
 
 export const createOrder = (order) => async (dispatch, getState) => {
     try {
@@ -45,7 +46,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.post(
-            `https://apzieserver.azurewebsites.net/api/orders/add/`,
+            `${proxy}/api/orders/add/`,
             order,
             config
         )
@@ -93,7 +94,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzieserver.azurewebsites.net/api/orders/${id}/`,
+            `${proxy}/api/orders/${id}/`,
             config
         )
 
@@ -132,7 +133,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzieserver.azurewebsites.net/api/orders/myorders/`,
+            `${proxy}/api/orders/myorders/`,
             config
         )
 
@@ -171,7 +172,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `https://apzieserver.azurewebsites.net/api/orders/${order._id}/deliver/`,
+            `${proxy}/api/orders/${order._id}/deliver/`,
             {},
             config
         )
@@ -210,7 +211,7 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `https://apzieserver.azurewebsites.net/api/orders/${id}/pay/`,
+            `${proxy}/api/orders/${id}/pay/`,
             paymentResult,
             config
         )
@@ -249,7 +250,7 @@ export const listOrders = () => async (dispatch, getState) => {
         }
 
         const { data } = await axios.get(
-            `https://apzieserver.azurewebsites.net/api/orders/`,
+            `${proxy}/api/orders/`,
             config
         )
 
