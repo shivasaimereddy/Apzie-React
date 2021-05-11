@@ -96,6 +96,7 @@ function ProductListScreen({ history, match }) {
                                         <th>PRICE</th>
                                         <th>CATEGORY</th>
                                         <th>BRAND</th>
+                                        <th>STOCK</th>
                                         <th>IMAGE</th>
                                         <th>ACTIONS</th>
                                     </tr>
@@ -118,6 +119,7 @@ function ProductListScreen({ history, match }) {
                                             <td>₹{product.price}</td>
                                             <td>{product.category}</td>
                                             <td>{product.brand}</td>
+                                            <td>{product.countInStock}</td>
                                             <td width="8%" onClick={togglePopup}>
                                                 <Image src={product.image_url} fluid rounded />
                                                 {isOpen && <Popup
