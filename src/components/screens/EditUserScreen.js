@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Form, Button, FormGroup } from "react-bootstrap";
+import { Form, Button, FormGroup, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../Loader";
 import Message from "../Message";
@@ -52,72 +52,74 @@ function EditUserScreen({ match, history }) {
     }
     return (
         <div>
-            <Link to='/admin/users/'>
-                Go Back
+            <Container>
+                <Link to='/admin/users/'>
+                    Go Back
             </Link>
-            <FormContainer>
-                <h1>Edit User</h1>
-                {loadingUpdate && <Loader />}
-                {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
-                {loading
-                    ? <Loader />
-                    : error
-                        ? (<Message variant='danger'>{error}</Message>)
-                        : (
-                            <Form onSubmit={submitHandler}>
+                <FormContainer>
+                    <h1>Edit User</h1>
+                    {loadingUpdate && <Loader />}
+                    {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
+                    {loading
+                        ? <Loader />
+                        : error
+                            ? (<Message variant='danger'>{error}</Message>)
+                            : (
+                                <Form onSubmit={submitHandler}>
 
-                                <Form.Group controlId='name'>
-                                    <Form.Label>Name</Form.Label>
-                                    <Form.Control
-                                        type='name'
-                                        placeholder='Enter Name'
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                    >
-                                    </Form.Control>
-                                </Form.Group>
+                                    <Form.Group controlId='name'>
+                                        <Form.Label>Name</Form.Label>
+                                        <Form.Control
+                                            type='name'
+                                            placeholder='Enter Name'
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                        >
+                                        </Form.Control>
+                                    </Form.Group>
 
-                                <Form.Group controlId='email'>
-                                    <Form.Label>Email Address</Form.Label>
-                                    <Form.Control
-                                        type='email'
-                                        placeholder='Enter Email'
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                    >
-                                    </Form.Control>
-                                </Form.Group>
+                                    <Form.Group controlId='email'>
+                                        <Form.Label>Email Address</Form.Label>
+                                        <Form.Control
+                                            type='email'
+                                            placeholder='Enter Email'
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        >
+                                        </Form.Control>
+                                    </Form.Group>
 
-                                <FormGroup controlId='isadmin'>
-                                    <Form.Check
-                                        type='checkbox'
-                                        label='Is Admin'
-                                        checked={isAdmin}
-                                        onChange={(e) => setIsAdmin(e.target.checked)}
-                                    >
+                                    <FormGroup controlId='isadmin'>
+                                        <Form.Check
+                                            type='checkbox'
+                                            label='Is Admin'
+                                            checked={isAdmin}
+                                            onChange={(e) => setIsAdmin(e.target.checked)}
+                                        >
 
-                                    </Form.Check>
-                                </FormGroup>
+                                        </Form.Check>
+                                    </FormGroup>
 
-                                <FormGroup controlId='isactive'>
-                                    <Form.Check
-                                        type='checkbox'
-                                        label='Is Active'
-                                        checked={isActive}
-                                        onChange={(e) => setIsActive(e.target.checked)}
-                                    >
+                                    <FormGroup controlId='isactive'>
+                                        <Form.Check
+                                            type='checkbox'
+                                            label='Is Active'
+                                            checked={isActive}
+                                            onChange={(e) => setIsActive(e.target.checked)}
+                                        >
 
-                                    </Form.Check>
-                                </FormGroup>
+                                        </Form.Check>
+                                    </FormGroup>
 
-                                <Button type='submit' variant='primary'>
-                                    Update
+                                    <Button type='submit' variant='primary'>
+                                        Update
                                 </Button>
 
-                            </Form>
+                                </Form>
 
-                        )}
-            </FormContainer>
+                            )}
+                </FormContainer>
+            </Container>
         </div>
 
     )

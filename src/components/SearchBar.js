@@ -31,8 +31,8 @@ function SearchBar() {
             </Form.Control>
             <Button
                 type='submit'
-                variant='outline-success'
-                className='p-2'>
+                variant='outline-primary'
+                className='btn btn-outline-success'>
                 Submit
             </Button>
         </Form>

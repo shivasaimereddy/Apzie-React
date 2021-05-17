@@ -13,7 +13,6 @@ function Header() {
   const dispatch = useDispatch()
 
   const logoutHandler = () => {
-    console.log("logout clicked")
     dispatch(logout())
   }
 
